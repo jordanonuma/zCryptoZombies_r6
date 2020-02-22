@@ -29,7 +29,7 @@ contract ZombieFactory {
     } //end function _generateRandomDna()
 
     function createRandomZombie(string memory _name) public {
-        require(ownerZombieCount[msg.sender] == 0);
+        require(ownerZombieCount[msg.sender] == 0); //also can require the keccak256(abi.encodePacked()) of strings to have literal text
         uint randDna = _generateRandomDna(_name);
         _createZombie(_name, randDna);
     } //end function createRandomZombie()
