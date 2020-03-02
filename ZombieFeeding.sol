@@ -26,6 +26,11 @@ contract ZombieFeeding is ZombieFactory {
 
         uint _targetDna = _targetDna % dnaModulus;
         newDna = (myZombie.dna +_targetDna)/2;
+
+        if(keccak256(abi.encodepacked(_species)) == "kitty") {
+      
+        } //end if()
+        
         _createZombie("NoName", newDna);
     } //end function feedAndMultiply()
 
