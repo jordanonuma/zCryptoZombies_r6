@@ -9,4 +9,8 @@ contract ZombieHelper is ZombieFeeding {
         _;
     } //end modifier aboveLevel()
 
+    function changeName(uint _zombieId, string calldata _newName) external aboveLevel(2, _zombieId) {
+
+    } //end function changeName()
+
 } //end ZombieHelper{}
