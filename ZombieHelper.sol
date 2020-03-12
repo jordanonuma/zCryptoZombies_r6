@@ -20,7 +20,7 @@ contract ZombieHelper is ZombieFeeding {
     } //end function changeDna()
 
     function getZombiesByOwner(address _owner) external view {
-    
+        return memory uint[];
     } //end function getZombiesByOwner()
 
 } //end ZombieHelper{}
