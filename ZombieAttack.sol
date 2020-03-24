@@ -16,7 +16,7 @@ contract ZombieAttack is ZombieHelper {
         uint rand = randMod(100);
 
         if(rand <= attackVictoryProbability) {
-      
+            myZombie.winCount++;
         } //end if()
     } //end function attack()
 } //end contract ZombieAttack{}
