@@ -18,6 +18,7 @@ contract ZombieAttack is ZombieHelper {
         if(rand <= attackVictoryProbability) {
             myZombie.winCount++;
             myZombie.level++;
+            enemyZombie.lossCount++;
         } //end if()
     } //end function attack()
 } //end contract ZombieAttack{}
