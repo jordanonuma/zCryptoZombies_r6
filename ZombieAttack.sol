@@ -6,7 +6,7 @@ contract ZombieAttack is ZombieHelper {
     uint attackVictoryProbability = 70; //i.e. 70% chance of winning
 
     function randMod(uint _modulus) internal returns(uint) {
-        randNonce++;
+        randNonce = randNonce.add(1);
         return uint(keccak256(abi.encodePacked(now, msg.sender, randNonce))) % _modulus;
     } //end function randMod()
 
