@@ -2,6 +2,9 @@ pragma solidity >=0.5.0 <0.6.0;
 import "./ZombieAttack.sol";
 import "./ERC721.sol";
 
+// @title - tracks zombies and their owners
+// @author - me
+// @dev - compliant with Open Zeppelin's ERC721 spec 
 contract ZombieOwnership is ZombieAttack, ERC721 {
   mapping (uint => address) zombieApprovals;
 
