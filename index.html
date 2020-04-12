@@ -21,9 +21,9 @@
             } //end function getZombieDetails()
 
             function zombieToOwner(id) {
-        
+                return cryptoZombies.methods.zombieToOwner(id).call()
             } //end function zombieToOwner()
-            
+
             window.addEventListener('load', function() {
 
             // Checking if Web3 has been injected by the browser (Mist/MetaMask)
