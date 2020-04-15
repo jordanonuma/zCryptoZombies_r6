@@ -69,6 +69,7 @@
 
             function feedOnKitty(zombieId, kittyId) {
                 $("#txStatus").text("Eating a kitty. This may take a while...");
+                return cryptoZombies.methods.feedOnKitty(zombieId, kittyId)
             } //end function feedOnKitty()
 
             function getZombieDetails(id) {
