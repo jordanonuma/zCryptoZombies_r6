@@ -84,6 +84,13 @@
 
             function levelUp(zombieId) {
                 $("#txStatus").text("Leveling up your zombie...");
+                .on("receipt", function(receipt) {
+                    $("#txStatus").text("Power overwhelming! Zombie successfully leveld up!");
+                    getZombiesByOwner(userAccount).then(displayZombies);
+                })
+                .on("error", function(error) {
+                    $("#txStatus").text(error);
+                });
             } //end function levelUp()
 
             function getZombieDetails(id) {
