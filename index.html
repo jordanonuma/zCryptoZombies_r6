@@ -26,6 +26,13 @@
                         getZombiesByOwner(userAccount).then(displayZombies);
                     } //end if()
                 }, 100); //end setInterval()
+
+                cryptoZombies.events.Transfer({ filter: {_to: userAccount} })
+                .on("data", function(events) {
+                    let data = event.returnValues;
+                    //then display zombies in GUI
+
+                }).on("error", console.error);
             } //end function startApp()
 
             function displayZombies(ids) {
