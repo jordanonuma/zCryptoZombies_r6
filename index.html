@@ -84,6 +84,7 @@
 
             function levelUp(zombieId) {
                 $("#txStatus").text("Leveling up your zombie...");
+                return cryptoZombies.methods.levelUp(zombieId)
                 .on("receipt", function(receipt) {
                     $("#txStatus").text("Power overwhelming! Zombie successfully leveld up!");
                 })
