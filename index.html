@@ -28,7 +28,7 @@
                 }, 100); //end setInterval()
 
                 cryptoZombies.events.Transfer({ filter: {_to: userAccount} })
-                .on("data", function(events) {
+                .on("data", function(event) {
                     let data = event.returnValues;
                     //then display zombies in GUI
                     getZombiesByOwner(userAccount).then(displayZombies);
