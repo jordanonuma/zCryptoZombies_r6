@@ -31,7 +31,7 @@
                 .on("data", function(events) {
                     let data = event.returnValues;
                     //then display zombies in GUI
-
+                    getZombiesByOwner(userAccount).then(displayZombies);
                 }).on("error", console.error);
             } //end function startApp()
 
