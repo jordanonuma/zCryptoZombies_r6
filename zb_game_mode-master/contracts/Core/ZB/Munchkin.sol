@@ -2,7 +2,7 @@ pragma solidity 0.4.25;
 
 import "./ZB/ZBGameMode.sol";
 
-contract ExampleGame is ZBGameMode  {
+contract Munchkin is ZBGameMode  {
 
     function beforeMatchStart(bytes serializedGameState) external {
         GameState memory gameState;
@@ -18,4 +18,4 @@ contract ExampleGame is ZBGameMode  {
         return(!bannedCards[card.mouldName]);
     } //end function isLegalCard()
 
-} //end contract ExampleGame{}
+} //end contract Munchkin{}
