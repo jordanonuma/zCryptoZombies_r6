@@ -2,10 +2,10 @@ const CryptoZombies = artifacts.require("CryptoZombies");
 
 contract("CryptoZombies", (accounts) => {
     let [alice, bob] = accounts;
-    const contractInstance;
+    let contractInstance;
 
     beforeEach(async () => {
-        contractInstance;
+        contractInstance = await CryptoZombies.new();
     }); //end beforeEach()
     
     it("should be able to create a new zombie", async () => {
