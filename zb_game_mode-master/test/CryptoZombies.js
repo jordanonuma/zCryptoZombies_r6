@@ -18,6 +18,6 @@ contract("CryptoZombies", (accounts) => {
 
     it("should not allow two zombies", async () => {
         await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
-        await utils.shouldThrow(CryptoZombies.createRandomZombie());
+        await utils.shouldThrow(contractInstance.createRandomZombie(zombieNames[1], {from: alice}));
     }) //end it()
   }) //end contract()
