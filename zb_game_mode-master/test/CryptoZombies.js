@@ -17,6 +17,6 @@ contract("CryptoZombies", (accounts) => {
     }) //end it()
 
     it("should not allow two zombies", async () => {
-
+        const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
     }) //end it()
   }) //end contract()
