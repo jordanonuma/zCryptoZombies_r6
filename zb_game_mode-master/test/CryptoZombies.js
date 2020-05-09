@@ -26,6 +26,7 @@ contract("CryptoZombies", (accounts) => {
           // Test the single-step transfer scenario.
           await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
           const zombieId = await CryptoZombies.new();
+          await contractInstance.transferFrom(zombieNames[0], {from: alice, bob});
         }) //end it()
     }) //end context()
     
