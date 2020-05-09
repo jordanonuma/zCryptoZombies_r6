@@ -32,7 +32,7 @@ contract("CryptoZombies", (accounts) => {
         }) //end it()
     }) //end context()
     
-    xcontext("with the two-step transfer scenario", async () => {
+    context("with the two-step transfer scenario", async () => {
         it("should approve and then transfer a zombie when the approved address calls transferForm", async () => {
           // Test the two-step scenario.  The approved address calls transferFrom
             const result = await contractInstance.createRandomZombie(zombieNames[0], {from: alice});
@@ -40,7 +40,7 @@ contract("CryptoZombies", (accounts) => {
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: bob});
         }) //end it()
-        it("should approve and then transfer a zombie when the owner calls transferForm", async () => {
+        xit("should approve and then transfer a zombie when the owner calls transferForm", async () => {
             // TODO: Test the two-step scenario.  The owner calls transferFrom
          }) //end it()
     }) //end context()
