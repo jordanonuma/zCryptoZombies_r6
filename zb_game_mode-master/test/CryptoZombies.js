@@ -40,7 +40,7 @@ contract("CryptoZombies", (accounts) => {
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: bob});
         }) //end it()
-        xit("should approve and then transfer a zombie when the owner calls transferForm", async () => {
+        xit("should approve and then transfer a zombie when the owner calls transferFrom", async () => {
             // TODO: Test the two-step scenario.  The owner calls transferFrom
          }) //end it()
     }) //end context()
