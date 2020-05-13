@@ -29,7 +29,7 @@ contract("CryptoZombies", (accounts) => {
           const zombieId = result.logs[0].args.zombieId.toNumber();
           await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
           const newOwner = await contractInstance.ownerOf(zombieId);
-          assert.equal(newOwner, bob);
+          expect(zombieOwner).to.equal(bob); //chai equivalent to assert.equal(newOwner, bob);
         }) //end it()
     }) //end context()
     
@@ -48,7 +48,7 @@ contract("CryptoZombies", (accounts) => {
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
             const newOwner = await contractInstance.ownerOf(zombieId);
-            assert.equal(newOwner, bob);
+            expect(zombieOwner).to.equal(bob); //chai equivalent to assert.equal(newOwner, bob);
          }) //end it() that tests Alic approving and transfering
          it("zombies should be able to attack another zombie", async () => {
             let result;
@@ -60,6 +60,6 @@ contract("CryptoZombies", (accounts) => {
             await time.increase(time.duration.days(1)); //Fast forwards EVM time by a day
 
             await contractInstance.attack(firstZombieId, secondZombieId, {from: alice});
-            assert.equal(result.receipt.status, true);
+            expect(result.receipt.status).to.equal(true); // chai equivalent to assert.equal(result.receipt.status, true);
         }) //end it() that tests Alice being able to attack Bob's zombie
     }) //end context()
