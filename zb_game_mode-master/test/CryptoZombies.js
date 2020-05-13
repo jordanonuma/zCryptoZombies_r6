@@ -29,7 +29,7 @@ contract("CryptoZombies", (accounts) => {
           const zombieId = result.logs[0].args.zombieId.toNumber();
           await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
           const newOwner = await contractInstance.ownerOf(zombieId);
-          expect(zombieOwner).to.equal(bob); //chai equivalent to assert.equal(newOwner, bob);
+          expect(newOwner).to.equal(bob); //chai equivalent to assert.equal(newOwner, bob);
         }) //end it()
     }) //end context()
     
@@ -48,7 +48,7 @@ contract("CryptoZombies", (accounts) => {
             await contractInstance.approve(bob, zombieId, {from: alice});
             await contractInstance.transferFrom(alice, bob, zombieId, {from: alice});
             const newOwner = await contractInstance.ownerOf(zombieId);
-            expect(zombieOwner).to.equal(bob); //chai equivalent to assert.equal(newOwner, bob);
+            expect(newOwner).to.equal(bob); //chai equivalent to assert.equal(newOwner, bob);
          }) //end it() that tests Alic approving and transfering
          it("zombies should be able to attack another zombie", async () => {
             let result;
