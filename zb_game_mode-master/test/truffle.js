@@ -33,8 +33,10 @@ module.exports = {
                 const chainId = 'extdev-plasma-us1';
                 const writeUrl = 'wss://extdev-basechain-us1.dappchains.com/websocket';
                 const readUrl = 'wss://extdev-basechain-us1.dappchains.com/queryws';
-                // TODO: Replace the line below
-                return new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey);
+                // loomTruffleProvide fills in the accounts array so the game can be tested
+                const loomTruffleProvider = new LoomTruffleProvider(chainId, writeUrl, readUrl, privateKey);
+                loomTruffleProvider.createExtraAccountsFromMnemonic(mnemonic, 10);
+                return loomTruffleProvider;
             },
             network_id: '9545242630824'
         }
