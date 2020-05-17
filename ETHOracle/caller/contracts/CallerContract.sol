@@ -1,4 +1,5 @@
 pragma solidity 0.5.0;
+import "./EthPriceOracleInterface.sol";
 
 contract CallerContract {
     address private oracleAddress;
