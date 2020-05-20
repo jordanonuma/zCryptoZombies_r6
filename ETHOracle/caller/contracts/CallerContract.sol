@@ -3,6 +3,7 @@ import "./EthPriceOracleInterface.sol";
 import "../../../Ownable.sol";
 
 contract CallerContract is Ownable {
+    uint256 private ethPrice;
     EthPriceOracleInterface private oracleInstance;
     address private oracleAddress;
     mapping(uint256=>bool) myRequests;
