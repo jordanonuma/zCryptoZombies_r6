@@ -22,5 +22,6 @@ contract EthPriceOracle is Ownable {
 
         CallerContractInterface CallerContractInstance;
         CallerContractInstance = CallerContractInterface(_callerAddress);
+        CallerContractInstance.callback(_ethPrice, _id);
     } //end function setLatestEthPrice()
 } //end contract EthPriceOracle{}
