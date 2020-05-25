@@ -9,5 +9,5 @@ const OracleJSON = require('./oracle/build/contracts/EthPriceOracle.json')
 var pendingRequests = []
 
 getOracleContract(web3.js) {
-    
+    const networkId = await web3js.eth.net.getId()
 } //end getOracleContract()
