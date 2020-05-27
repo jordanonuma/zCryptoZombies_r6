@@ -25,4 +25,13 @@ async function filterEvents(oracleContract, web3js) {
       }) //end else()
     
     } //end filtering GetLatestEthPriceEvent()
+
+    EthPriceOracle.events.SetLatestEthPriceEvent(async (err, event) => {
+        if (err) {
+          console.error('Error on event', err)
+          return
+        } //end if()
+    
+      }) //end else()
+    } //end filtering SetLatestEthPriceEvent()
 } //end function filterEvents()
