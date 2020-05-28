@@ -36,6 +36,8 @@ async function filterEvents(oracleContract, web3js) {
     } //end filtering SetLatestEthPriceEvent()
 } //end function filterEvents()
 
-async function addRequestToQueue (event) {
+async function addRequestToQueue(event) {
+    const callerAddress = event.returnValues.callerAddress
+    const id = event.returnValues.id
     
 } //end function addRequestToQueue()
