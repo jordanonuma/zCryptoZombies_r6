@@ -53,4 +53,7 @@ async function processQueue (oracleContract, ownerAddress) {
 
 async function processRequest (oracleContract, ownerAddress, id, callerAddress) {
     let retries = 0
+    while (retries < MAX_RETRIES) {
+        
+    } //end while()
 } //end function processRequest()
