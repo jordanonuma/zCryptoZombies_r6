@@ -67,3 +67,8 @@ async function processRequest (oracleContract, ownerAddress, id, callerAddress) 
         } //end catch()
     } //end while()
 } //end function processRequest()
+
+async function setLatestEthPrice (oracleContract, callerAddress, ownerAddress, ethPrice, id) {
+
+} //end function setLatestEthPrice()
+  
