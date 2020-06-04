@@ -91,4 +91,7 @@ async function setLatestEthPrice (oracleContract, callerAddress, ownerAddress, e
         // Do some error handling
     } //end catch()
 } //end function setLatestEthPrice()
-  
+
+async function init () {
+
+} //end function init()  
