@@ -93,5 +93,7 @@ async function setLatestEthPrice (oracleContract, callerAddress, ownerAddress, e
 } //end function setLatestEthPrice()
 
 async function init () {
-
+    function common.loadAccount(PRIVATE_KEY_FILE_NAME) {
+        return {ownerAddress, web3js, client}
+    } //end function common.loadAccount()
 } //end function init()  
