@@ -103,7 +103,7 @@ async function init () {
     const { oracleContract, ownerAddress, client } = await init()
     process.on( 'SIGINT', () => {
       console.log('Calling client.disconnect()')
-      
+      client.disconnect()
       process.exit( )
     })
     setInterval(async () => {
