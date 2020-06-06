@@ -48,6 +48,6 @@ async function init () {
   const oracleAddress =  OracleJSON.networks[networkId].address
   await callerContract.methods.setOracleInstanceAddress(oracleAddress).send({ from: ownerAddress })
   setInterval( async () => {
-    
+    await callerContract.methods.updateEthPrice(oracleAddress).send({ from: ownerAddress })
   }, SLEEP_INTERVAL);
 })()
