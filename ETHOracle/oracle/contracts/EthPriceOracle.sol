@@ -2,7 +2,8 @@ pragma solidity 0.5.0;
 import "../../../Ownable.sol";
 import "../access/Roles.sol";
 import "./CallerContractInterface.sol";
-contract EthPriceOracle is Ownable {
+contract EthPriceOracle {
+    using Roles for Roles.Role;
     uint private randNonce = 0;
     uint private modulus = 1000;
     mapping(uint256=>bool) pendingRequests;
