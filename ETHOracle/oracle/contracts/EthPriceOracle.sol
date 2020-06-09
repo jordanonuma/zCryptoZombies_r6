@@ -4,6 +4,8 @@ import "../access/Roles.sol";
 import "./CallerContractInterface.sol";
 contract EthPriceOracle {
     using Roles for Roles.Role;
+    private Roles.add(owners);
+    
     uint private randNonce = 0;
     uint private modulus = 1000;
     mapping(uint256=>bool) pendingRequests;
