@@ -12,6 +12,7 @@ contract EthPriceOracle {
     mapping(uint256=>bool) pendingRequests;
     event GetLatestEthPriceEvent(address callerAddress, uint id);
     event SetLatestEthPriceEvent(uint256 ethPrice, address callerAddress);
+    event AddOracleEvent(address oracleAddress);
   
     constructor (address _owner) public {
         owners.add(_owner);
