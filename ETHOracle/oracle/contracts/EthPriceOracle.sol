@@ -11,6 +11,7 @@ contract EthPriceOracle {
     uint private modulus = 1000;
     uint private numOracles = 0;
 
+    mapping (uint256=>Response[]) public requestIdToResponse;
     mapping(uint256=>bool) pendingRequests;
     event GetLatestEthPriceEvent(address callerAddress, uint id);
     event SetLatestEthPriceEvent(uint256 ethPrice, address callerAddress);
