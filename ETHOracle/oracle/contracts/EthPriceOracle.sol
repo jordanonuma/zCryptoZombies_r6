@@ -58,8 +58,9 @@ contract EthPriceOracle {
         require(oracles.has(msg.sender), "Not an oracle!");
         require(pendingRequests[_id], "This request is not in my pending list.");
 
-        Response memory resp;
-        
+        Response memory resp; //declares resp
+        resp = new Response(msg.sender, _callerAddress, _ethPrice); //initializes resp
+
         delete pendingRequests[_id];
 
         CallerContractInterface CallerContractInstance;
