@@ -60,6 +60,7 @@ contract EthPriceOracle {
 
         Response memory resp; //declares resp
         resp = new Response(msg.sender, _callerAddress, _ethPrice); //initializes resp
+        requestIdToResponse[_id].push(resp); //pushes resp to the requestIdToResponse[] mapping
 
         delete pendingRequests[_id];
 
