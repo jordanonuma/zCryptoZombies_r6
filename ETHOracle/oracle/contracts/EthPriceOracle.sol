@@ -13,6 +13,13 @@ contract EthPriceOracle {
 
     mapping (uint256=>Response[]) public requestIdToResponse;
     mapping(uint256=>bool) pendingRequests;
+
+    struct Response {
+        address oracleAddress;
+        address callerAddress;
+        uint256 ethPrice;
+    } //end struct Response{}
+    
     event GetLatestEthPriceEvent(address callerAddress, uint id);
     event SetLatestEthPriceEvent(uint256 ethPrice, address callerAddress);
     event AddOracleEvent(address oracleAddress);
