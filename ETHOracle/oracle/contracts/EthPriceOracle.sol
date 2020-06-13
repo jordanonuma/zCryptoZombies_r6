@@ -46,7 +46,8 @@ contract EthPriceOracle {
         return id;
     } //end function getLatestEthPrice()
 
-    function setLatestEthPrice(uint256 _ethPrice, address _callerAddress, uint256 _id) public onlyOracle() {
+    function setLatestEthPrice(uint256 _ethPrice, address _callerAddress, uint256 _id) public {
+        require(oracles.has(msg.sender), "Not an oracle!");
         require(pendingRequests[_id], "This request is not in my pending list.");
         delete pendingRequests[_id];
 
