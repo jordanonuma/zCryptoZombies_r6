@@ -67,8 +67,8 @@ contract EthPriceOracle {
 
         if (numResponses == THRESHOLD) {
             uint computedEthPrice = 0;
-            for (uint f =0; f <requestIDToReponse[_id].length; f++) {
-        
+            for (uint f =0; f <requestIDToResponse[_id].length; f++) {
+                computedEthPrice += requestIdToResponse[_id][f].ethPrice;
             } //end for()
 
             delete pendingRequests[_id];
