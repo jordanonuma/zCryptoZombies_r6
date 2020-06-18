@@ -2,6 +2,8 @@ pragma solidity 0.5.0;
 // import "../../../Ownable.sol";
 import "../access/Roles.sol";
 import "./CallerContractInterface.sol";
+import "../../../SafeMath.sol";
+
 contract EthPriceOracle {
     using Roles for Roles.Role;
     Roles.Role private owners;
