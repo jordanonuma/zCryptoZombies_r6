@@ -81,8 +81,8 @@ contract EthPriceOracle {
 
             CallerContractInterface CallerContractInstance;
             CallerContractInstance = CallerContractInterface(_callerAddress);
-            CallerContractInstance.callback(_ethPrice, _id);
-            emit SetLatestEthPriceEvent(_ethPrice, _callerAddress);
+            CallerContractInstance.callback(computedEthPrice, _id);
+            emit SetLatestEthPriceEvent(computeEthPrice, _callerAddress);
         } //end if()
 
     } //end function setLatestEthPrice()
